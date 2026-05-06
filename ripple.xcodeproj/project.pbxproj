@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000002 /* RippleDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000012 /* RippleDefaults.swift */; };
+		A10000000000000000000003 /* RippleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000013 /* RippleEffect.swift */; };
+		A10000000000000000000004 /* RippleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000014 /* RippleModifier.swift */; };
+		A10000000000000000000006 /* RipplePreviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000016 /* RipplePreviewScreen.swift */; };
+		A10000000000000000000007 /* RipplePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000017 /* RipplePreviewView.swift */; };
+		A10000000000000000000008 /* PressLocationGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000018 /* PressLocationGesture.swift */; };
+		A10000000000000000000009 /* Ripple.metal in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000019 /* Ripple.metal */; };
+		A1000000000000000000000A /* rippleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001A /* rippleApp.swift */; };
+		A1000000000000000000000B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000010 /* Assets.xcassets */; };
+		A1000000000000000000000C /* TransitionRevealModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001B /* TransitionRevealModifier.swift */; };
+		A1000000000000000000000E /* TransitionReveal.metal in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001D /* TransitionReveal.metal */; };
+		A1000000000000000000001E /* RippleTransitionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001F /* RippleTransitionEvent.swift */; };
+		A10000000000000000000020 /* RipplePreviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000021 /* RipplePreviewModel.swift */; };
+		A10000000000000000000022 /* RippleCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000023 /* RippleCanvasView.swift */; };
+		A10000000000000000000024 /* RippleControlsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000025 /* RippleControlsPanel.swift */; };
+		A10000000000000000000026 /* PreparedImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000027 /* PreparedImageProvider.swift */; };
+		A10000000000000000000028 /* RipplePreviewTuningSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000029 /* RipplePreviewTuningSpec.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		760EF2922F8BA3160087886D /* ripple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ripple.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A10000000000000000000012 /* RippleDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleDefaults.swift; sourceTree = "<group>"; };
+		A10000000000000000000013 /* RippleEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleEffect.swift; sourceTree = "<group>"; };
+		A10000000000000000000014 /* RippleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleModifier.swift; sourceTree = "<group>"; };
+		A10000000000000000000016 /* RipplePreviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RipplePreviewScreen.swift; sourceTree = "<group>"; };
+		A10000000000000000000017 /* RipplePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RipplePreviewView.swift; sourceTree = "<group>"; };
+		A10000000000000000000018 /* PressLocationGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressLocationGesture.swift; sourceTree = "<group>"; };
+		A10000000000000000000019 /* Ripple.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Ripple.metal; sourceTree = "<group>"; };
+		A1000000000000000000001A /* rippleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rippleApp.swift; sourceTree = "<group>"; };
+		A1000000000000000000001B /* TransitionRevealModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionRevealModifier.swift; sourceTree = "<group>"; };
+		A1000000000000000000001D /* TransitionReveal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = TransitionReveal.metal; sourceTree = "<group>"; };
+		A1000000000000000000001F /* RippleTransitionEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleTransitionEvent.swift; sourceTree = "<group>"; };
+		A10000000000000000000021 /* RipplePreviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RipplePreviewModel.swift; sourceTree = "<group>"; };
+		A10000000000000000000023 /* RippleCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleCanvasView.swift; sourceTree = "<group>"; };
+		A10000000000000000000025 /* RippleControlsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleControlsPanel.swift; sourceTree = "<group>"; };
+		A10000000000000000000027 /* PreparedImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparedImageProvider.swift; sourceTree = "<group>"; };
+		A10000000000000000000029 /* RipplePreviewTuningSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RipplePreviewTuningSpec.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		760EF28F2F8BA3160087886D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		760EF2892F8BA3160087886D = {
+			isa = PBXGroup;
+			children = (
+				760EF2942F8BA3160087886D /* ripple */,
+				760EF2932F8BA3160087886D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		760EF2932F8BA3160087886D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				760EF2922F8BA3160087886D /* ripple.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		760EF2942F8BA3160087886D /* ripple */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000100 /* Effects */,
+				A10000000000000000000101 /* Features */,
+				A10000000000000000000103 /* Gestures */,
+				A10000000000000000000010 /* Assets.xcassets */,
+				A10000000000000000000019 /* Ripple.metal */,
+				A1000000000000000000001D /* TransitionReveal.metal */,
+				A1000000000000000000001A /* rippleApp.swift */,
+			);
+			path = ripple;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000100 /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000012 /* RippleDefaults.swift */,
+				A10000000000000000000013 /* RippleEffect.swift */,
+				A10000000000000000000014 /* RippleModifier.swift */,
+				A1000000000000000000001B /* TransitionRevealModifier.swift */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000101 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000102 /* RipplePreview */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000102 /* RipplePreview */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000023 /* RippleCanvasView.swift */,
+				A10000000000000000000025 /* RippleControlsPanel.swift */,
+				A10000000000000000000027 /* PreparedImageProvider.swift */,
+				A10000000000000000000021 /* RipplePreviewModel.swift */,
+				A10000000000000000000016 /* RipplePreviewScreen.swift */,
+				A10000000000000000000029 /* RipplePreviewTuningSpec.swift */,
+				A1000000000000000000001F /* RippleTransitionEvent.swift */,
+				A10000000000000000000017 /* RipplePreviewView.swift */,
+			);
+			path = RipplePreview;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000103 /* Gestures */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000018 /* PressLocationGesture.swift */,
+			);
+			path = Gestures;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		760EF2912F8BA3160087886D /* ripple */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 760EF29D2F8BA3170087886D /* Build configuration list for PBXNativeTarget "ripple" */;
+			buildPhases = (
+				760EF28E2F8BA3160087886D /* Sources */,
+				760EF28F2F8BA3160087886D /* Frameworks */,
+				760EF2902F8BA3160087886D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ripple;
+			packageProductDependencies = (
+			);
+			productName = ripple;
+			productReference = 760EF2922F8BA3160087886D /* ripple.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		760EF28A2F8BA3160087886D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					760EF2912F8BA3160087886D = {
+						CreatedOnToolsVersion = 26.4;
+					};
+				};
+			};
+			buildConfigurationList = 760EF28D2F8BA3160087886D /* Build configuration list for PBXProject "ripple" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 760EF2892F8BA3160087886D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 760EF2932F8BA3160087886D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				760EF2912F8BA3160087886D /* ripple */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		760EF2902F8BA3160087886D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000000000000000000000B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		760EF28E2F8BA3160087886D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000008 /* PressLocationGesture.swift in Sources */,
+				A10000000000000000000009 /* Ripple.metal in Sources */,
+				A1000000000000000000000E /* TransitionReveal.metal in Sources */,
+				A1000000000000000000000A /* rippleApp.swift in Sources */,
+				A10000000000000000000002 /* RippleDefaults.swift in Sources */,
+				A10000000000000000000003 /* RippleEffect.swift in Sources */,
+				A10000000000000000000004 /* RippleModifier.swift in Sources */,
+				A10000000000000000000020 /* RipplePreviewModel.swift in Sources */,
+				A10000000000000000000022 /* RippleCanvasView.swift in Sources */,
+				A10000000000000000000024 /* RippleControlsPanel.swift in Sources */,
+				A10000000000000000000026 /* PreparedImageProvider.swift in Sources */,
+				A10000000000000000000028 /* RipplePreviewTuningSpec.swift in Sources */,
+				A1000000000000000000001E /* RippleTransitionEvent.swift in Sources */,
+				A1000000000000000000000C /* TransitionRevealModifier.swift in Sources */,
+				A10000000000000000000006 /* RipplePreviewScreen.swift in Sources */,
+				A10000000000000000000007 /* RipplePreviewView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		760EF29B2F8BA3170087886D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		760EF29C2F8BA3170087886D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		760EF29E2F8BA3170087886D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ripple;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		760EF29F2F8BA3170087886D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ripple;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		760EF28D2F8BA3160087886D /* Build configuration list for PBXProject "ripple" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				760EF29B2F8BA3170087886D /* Debug */,
+				760EF29C2F8BA3170087886D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		760EF29D2F8BA3170087886D /* Build configuration list for PBXNativeTarget "ripple" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				760EF29E2F8BA3170087886D /* Debug */,
+				760EF29F2F8BA3170087886D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 760EF28A2F8BA3160087886D /* Project object */;
+}
