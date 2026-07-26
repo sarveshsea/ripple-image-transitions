@@ -1,25 +1,47 @@
 # Media Rights
 
-## Scope
+## Fork status
 
-- the code in this repository is released under the MIT license in [../LICENSE](../LICENSE)
-- the bundled sample images and preview media are not covered by that MIT license
+This fork removes every media file that upstream identifies as outside the MIT
+license:
 
-## Files Covered By This Notice
+- `docs/media/github-cover.jpg` was removed
+- `ripple/Assets.xcassets/image_2.imageset/image-2.jpg` was removed
+- `ripple/Assets.xcassets/palm_tree.imageset/image.png` was replaced
+
+The current runtime assets are:
 
 - `ripple/Assets.xcassets/palm_tree.imageset/image.png`
-- `ripple/Assets.xcassets/image_2.imageset/image-2.jpg`
-- `docs/media/github-cover.jpg`
+- `ripple/Assets.xcassets/image_2.imageset/image-2.png`
 
-## Usage Restriction
+They are replacement abstract images generated specifically for this fork on
+2026-07-26. No source images were supplied to the generation tool. Their exact
+prompts, timestamps, output identifiers, dimensions, and SHA256 hashes are in
+[`media/provenance.json`](./media/provenance.json).
 
-- copyright for these media files belongs to Apple
-- these media files are included only to demonstrate the ripple transition effect in this repository
-- these media files are based on past Apple wallpaper imagery
-- commercial use of these media files is not allowed
-- these media files are intended only for experimental use inside Xcode in this sample
+`docs/media/memi-simulator-proof.jpg` is a simulator screenshot of the fork
+using a replacement asset. It is retained as documentation evidence and includes
+Apple simulator chrome; this repository does not grant rights it does not hold
+in third-party interface elements.
 
-## If You Publish A Fork
+## License basis and limits
 
-- replace these media files if your fork or derivative project needs assets cleared for commercial use
-- do not assume the repository MIT license applies to bundled demo imagery
+The fork maintainer offers the two generated replacement images under the MIT
+license in [`LICENSE`](../LICENSE). The stated basis is the output-assignment
+language in the OpenAI agreement applicable to the account that requested the
+images:
+
+- [Terms of Use, Content](https://openai.com/policies/terms-of-use/)
+- [OpenAI Services Agreement, Customer Content](https://openai.com/policies/services-agreement/)
+
+This repository record does not establish which of those agreements governed
+the generating account. It also does not independently prove copyrightability,
+uniqueness, or absence of third-party rights. The hashes and prompts make the
+generation event auditable without expanding that claim.
+
+## Upstream attribution
+
+The application source remains derived from
+[`eujinco/ripple-image-transitions`](https://github.com/eujinco/ripple-image-transitions).
+The original copyright and MIT terms remain intact in
+[`LICENSE`](../LICENSE).

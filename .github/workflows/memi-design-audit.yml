@@ -1,0 +1,27 @@
+name: memi design audit
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  read-only-design-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # releases/v4, 2026-07-16
+
+      - name: Test and verify media provenance policy
+        shell: bash
+        run: bash scripts/test-media-provenance.sh
+
+      - name: Run pinned memi design audit
+        uses: sarveshsea/memi@ee3f3f00731a7a08c7616d4dfb14440165a86354 # first-run audits are non-invasive
+        with:
+          version: "2.6.2"
+          fail-on: none
+          report: "true"
+          upload-sarif: "false"

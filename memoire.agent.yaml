@@ -1,0 +1,22 @@
+schemaVersion: 1
+product:
+  name: ripple-image-transitions
+  suite: swiftui-metal-evaluation
+memory:
+  sources:
+    - README.md
+    - docs
+    - ripple
+harnesses:
+  default: codex
+  enabled:
+    - codex
+skills:
+  - audit-frontend-design
+recipes:
+  - id: design-audit
+    title: Read-only SwiftUI and Metal audit
+    prompt: "Audit this SwiftUI and Metal sample without editing source files. Report scanner coverage explicitly, distinguish generated evidence from manual review, and check accessibility, reduced motion, shader sampling, performance, attribution, and media licensing."
+    commands:
+      - "memi diagnose . --json --no-write --fail-on none"
+      - "memi ios brief --platform ios --intent \"Audit the SwiftUI and Metal ripple transition without editing files\" --detail compact --json"

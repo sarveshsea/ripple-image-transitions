@@ -1,8 +1,12 @@
-[![Ripple transition demo](docs/media/github-cover.jpg)](https://x.com/eujinco/status/2050865443272089819?s=20)
-
 # Ripple Image Transitions
 
 SwiftUI + Metal sample for one atomic ripple + image reveal transition.
+
+> This is an evaluation fork of
+> [`eujinco/ripple-image-transitions`](https://github.com/eujinco/ripple-image-transitions).
+> It preserves the upstream implementation and attribution while demonstrating a
+> read-only [memi](https://github.com/sarveshsea/memi) design-audit integration.
+> The fork is not affiliated with or endorsed by the upstream maintainer.
 
 Each tap:
 
@@ -13,6 +17,33 @@ Each tap:
 - commits the next image only after the reveal duration has elapsed
 
 [Watch the demo on X by @eujinco](https://x.com/eujinco/status/2050865443272089819?s=20)
+
+## Read-only memi audit
+
+The repository pins both the memi action source and CLI version. The workflow
+does not edit tracked source files:
+
+```bash
+DO_NOT_TRACK=1 MEMI_TELEMETRY_DISABLED=1 \
+  npx -y @memi-design/cli@2.6.2 \
+  diagnose . --json --no-write --fail-on none
+```
+
+The current CLI is primarily a web UI scanner. On this SwiftUI project it
+reports zero scanned files, so its nominal score is not treated as evidence of
+interface quality. See the
+[baseline report](./docs/memi-design-audit.md) for the exact result and the
+manual SwiftUI/Metal findings that remain outside the scanner's coverage.
+
+The checked-in [`memoire.agent.yaml`](./memoire.agent.yaml) narrows the
+integration to a read-only SwiftUI audit recipe. CI uploads memi's generated
+health artifacts without committing them.
+
+![Simulator launch proof showing the replacement blue ripple asset and four tuning controls](docs/media/memi-simulator-proof.jpg)
+
+The screenshot was captured after a clean Debug build and launch on the
+`Nate Design QA 26.5` iPhone simulator. It is launch evidence, not a substitute
+for accessibility or interaction testing.
 
 ## Repository Boundary
 
@@ -47,9 +78,13 @@ It is intentionally not trying to provide:
 
 ## Sample Media Notice
 
-- bundled sample media is not covered by the repository MIT license
-- commercial use of the sample media is not allowed; see [docs/media-rights.md](./docs/media-rights.md)
+- the upstream Apple-derived sample media was removed from this fork
+- the replacement abstract demo images were generated specifically for this
+  fork and are offered under this repository's MIT license on the contractual
+  basis documented in the provenance record
+- see [media rights](./docs/media-rights.md) and the machine-readable
+  [provenance record](./docs/media/provenance.json)
 
 ## License
 
-[MIT License](./LICENSE)
+[MIT License](./LICENSE), preserving copyright and attribution to Eujin Nam.
