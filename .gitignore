@@ -17,3 +17,4 @@ DerivedData/
 *.dSYM.zip
 xcuserdata/
 **/xcuserdata/
+.memoire/

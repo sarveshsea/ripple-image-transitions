@@ -1,25 +1,29 @@
 # Media Rights
 
-## Scope
+## Fork status
 
-- the code in this repository is released under the MIT license in [../LICENSE](../LICENSE)
-- the bundled sample images and preview media are not covered by that MIT license
+This fork removes every media file that upstream identifies as outside the MIT
+license:
 
-## Files Covered By This Notice
+- `docs/media/github-cover.jpg` was removed
+- `ripple/Assets.xcassets/image_2.imageset/image-2.jpg` was removed
+- `ripple/Assets.xcassets/palm_tree.imageset/image.png` was replaced
+
+The current runtime assets are:
 
 - `ripple/Assets.xcassets/palm_tree.imageset/image.png`
-- `ripple/Assets.xcassets/image_2.imageset/image-2.jpg`
-- `docs/media/github-cover.jpg`
+- `ripple/Assets.xcassets/image_2.imageset/image-2.png`
 
-## Usage Restriction
+They are original abstract images generated specifically for this fork on
+2026-07-26. They contain no upstream media and are included under the same MIT
+license as the repository.
 
-- copyright for these media files belongs to Apple
-- these media files are included only to demonstrate the ripple transition effect in this repository
-- these media files are based on past Apple wallpaper imagery
-- commercial use of these media files is not allowed
-- these media files are intended only for experimental use inside Xcode in this sample
+`docs/media/memi-simulator-proof.jpg` is a simulator screenshot of the fork
+using the replacement asset and is also included under the repository license.
 
-## If You Publish A Fork
+## Upstream attribution
 
-- replace these media files if your fork or derivative project needs assets cleared for commercial use
-- do not assume the repository MIT license applies to bundled demo imagery
+The application source remains derived from
+[`eujinco/ripple-image-transitions`](https://github.com/eujinco/ripple-image-transitions).
+The original copyright and MIT terms remain intact in
+[`LICENSE`](../LICENSE).
