@@ -13,6 +13,12 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # releases/v4, 2026-07-16
+        with:
+          fetch-depth: 0
+
+      - name: Verify workflow history and read-only contract
+        shell: bash
+        run: bash scripts/test-memi-workflow.sh
 
       - name: Test and verify media provenance policy
         shell: bash
