@@ -18,4 +18,14 @@ grep -Eq '^[[:space:]]+contents:[[:space:]]+read([[:space:]]|$)' "$workflow" || 
   exit 1
 }
 
+git rev-parse --verify --quiet origin/main >/dev/null || {
+  printf 'Memi audit checkout must expose origin/main.\n' >&2
+  exit 1
+}
+
+git merge-base HEAD origin/main >/dev/null || {
+  printf 'Memi audit checkout must have enough history to resolve the origin/main merge base.\n' >&2
+  exit 1
+}
+
 printf 'Memi workflow history and read-only contract verified.\n'
