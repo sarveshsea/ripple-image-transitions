@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-07-26T21:07:23Z",
+  "upstreamExcludedMedia": [
+    {
+      "upstreamPath": "docs/media/github-cover.jpg",
+      "sha256": "878dc73ac54772edf6f11875dc33d0e3e4890eff36df226dde048f0e7112244f",
+      "forkStatus": "removed"
+    },
+    {
+      "upstreamPath": "ripple/Assets.xcassets/image_2.imageset/image-2.jpg",
+      "sha256": "0eaad28660474f180617af4ca26e2933f235752a0422e6405326af9b815fdf17",
+      "forkStatus": "removed"
+    },
+    {
+      "upstreamPath": "ripple/Assets.xcassets/palm_tree.imageset/image.png",
+      "sha256": "81c7ccdef20ecb065f4daf442e8e65c3d1da3641c6311b30338a90ea258b872b",
+      "forkStatus": "replaced"
+    }
+  ],
+  "replacementMedia": [
+    {
+      "path": "ripple/Assets.xcassets/palm_tree.imageset/image.png",
+      "sha256": "1bf16370ba93a85f83f42636d12001d916b02a269c87d2dc27e05b852416d1b1",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "generatedAt": "2026-07-26T20:52:26Z",
+      "timestampBasis": "Local output file birth and modification time, converted from America/Chicago to UTC.",
+      "generation": {
+        "tool": "OpenAI Codex image_gen.imagegen",
+        "model": "not exposed by the tool response",
+        "outputId": "call_cuIQDFsn57HbWuXxwGIV3bVS.png",
+        "sourceImages": [],
+        "prompt": "Create an original, license-clear abstract image for a SwiftUI Metal ripple transition demo. Square 2048x2048 composition, deep midnight navy background, luminous cobalt and cyan concentric fluid arcs sweeping from the lower left, subtle fine-grain texture, crisp high-contrast focal shapes, no text, no logos, no recognizable copyrighted imagery, no imitation of Apple wallpapers or any named artist. Clean contemporary generative design suitable for demonstrating image distortion."
+      }
+    },
+    {
+      "path": "ripple/Assets.xcassets/image_2.imageset/image-2.png",
+      "sha256": "693ce5ff5f685b6c38868dc63a7b1a30c14252dd54ceb626b32a790fc0837692",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "generatedAt": "2026-07-26T20:53:20Z",
+      "timestampBasis": "Local output file birth and modification time, converted from America/Chicago to UTC.",
+      "generation": {
+        "tool": "OpenAI Codex image_gen.imagegen",
+        "model": "not exposed by the tool response",
+        "outputId": "call_GE2fLzRaxcj2WA2SfhNlkHJD.png",
+        "sourceImages": [],
+        "prompt": "Create a second original, license-clear abstract image for a SwiftUI Metal ripple transition demo. Square 2048x2048 composition, warm near-black aubergine background, luminous coral, magenta, and amber geometric waves flowing from the upper right, layered translucent bands and subtle fine-grain texture, crisp high-contrast focal shapes, no text, no logos, no recognizable copyrighted imagery, no imitation of Apple wallpapers or any named artist. Clean contemporary generative design that contrasts strongly with a blue ripple image."
+      }
+    }
+  ],
+  "documentationEvidence": [
+    {
+      "path": "docs/media/memi-simulator-proof.jpg",
+      "sha256": "6978232a450b958ca039c54ba10a1675017d3840cc84bcefd60de3d63ab8a6a4",
+      "dimensions": {
+        "width": 368,
+        "height": 800
+      },
+      "capturedAt": "2026-07-26T20:57:23Z",
+      "timestampBasis": "Local screenshot file birth and modification time, converted from America/Chicago to UTC.",
+      "construction": {
+        "tool": "XcodeBuildMCP screenshot",
+        "source": "Debug simulator launch of com.example.ripple",
+        "simulator": "Nate Design QA 26.5",
+        "sourceImages": [
+          "ripple/Assets.xcassets/palm_tree.imageset/image.png"
+        ]
+      }
+    }
+  ],
+  "licenseBasis": {
+    "offeredLicense": "MIT",
+    "basis": "The fork maintainer relies on the output-assignment language in the OpenAI agreement applicable to the account that requested the replacement images.",
+    "candidateAgreements": [
+      "https://openai.com/policies/terms-of-use/",
+      "https://openai.com/policies/services-agreement/"
+    ],
+    "limitations": [
+      "This record does not verify which candidate agreement governed the generating account.",
+      "This record does not independently prove copyrightability or uniqueness.",
+      "This record does not warrant absence of third-party rights.",
+      "No external source images were supplied to the generation tool."
+    ]
+  }
+}

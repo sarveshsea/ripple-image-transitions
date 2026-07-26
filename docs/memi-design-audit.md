@@ -25,9 +25,11 @@ The unchanged SwiftUI and Metal implementation plus replacement assets built
 and launched successfully in Debug configuration on the `Nate Design QA 26.5`
 iPhone simulator:
 
-- build status: succeeded
-- Xcode warnings: 0
-- Xcode errors: 0
+- XcodeBuildMCP build-and-run status: succeeded
+- XcodeBuildMCP structured diagnostics: 0 warnings and 0 errors
+- independent generic `xcodebuild`: succeeded, with one
+  `appintentsmetadataprocessor` warning that metadata extraction was skipped
+  because the app has no `AppIntents.framework` dependency
 - bundle identifier: `com.example.ripple`
 - visual evidence: [`media/memi-simulator-proof.jpg`](./media/memi-simulator-proof.jpg)
 
@@ -77,7 +79,8 @@ sample.
 The upstream MIT license and Eujin Nam copyright notice are preserved. The
 three Apple-derived media files excluded by upstream were removed or replaced
 before publication. Replacement provenance is documented in
-[`media-rights.md`](./media-rights.md).
+[`media-rights.md`](./media-rights.md) and the machine-readable
+[`media/provenance.json`](./media/provenance.json).
 
 ## Next acceptance gate
 

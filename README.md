@@ -80,8 +80,10 @@ It is intentionally not trying to provide:
 
 - the upstream Apple-derived sample media was removed from this fork
 - the replacement abstract demo images were generated specifically for this
-  fork and are covered by this repository's MIT license
-- see [docs/media-rights.md](./docs/media-rights.md) for provenance
+  fork and are offered under this repository's MIT license on the contractual
+  basis documented in the provenance record
+- see [media rights](./docs/media-rights.md) and the machine-readable
+  [provenance record](./docs/media/provenance.json)
 
 ## License
 

@@ -13,7 +13,6 @@ harnesses:
     - codex
 skills:
   - audit-frontend-design
-  - build-swiftui-interface
 recipes:
   - id: design-audit
     title: Read-only SwiftUI and Metal audit
