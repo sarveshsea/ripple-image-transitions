@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # releases/v4, 2026-07-16
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, 2026-07-20
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Verify workflow history and read-only contract
         shell: bash
@@ -24,6 +25,18 @@ jobs:
         shell: bash
         run: bash scripts/test-media-provenance.sh
 
+      - name: Verify MIT attribution and fork boundary
+        shell: bash
+        run: bash scripts/test-license-attribution.sh
+
+      - name: Verify accessible motion contract
+        shell: bash
+        run: bash scripts/test-accessible-motion-contract.sh
+
+      - name: Verify Memi rerun evidence
+        shell: bash
+        run: bash scripts/test-memi-rerun-evidence.sh
+
       - name: Run pinned memi design audit
         uses: sarveshsea/memi@ee3f3f00731a7a08c7616d4dfb14440165a86354 # first-run audits are non-invasive
         with:
@@ -31,3 +44,8 @@ jobs:
           fail-on: none
           report: "true"
           upload-sarif: "false"
+
+      - name: Prove no undeclared repo-local changes
+        if: ${{ always() }}
+        shell: bash
+        run: bash scripts/verify-read-only-worktree.sh

@@ -77,13 +77,13 @@ final class RipplePreviewModel {
         isTransitioning ? (latestTransitionEvent?.duration ?? 0) : 0
     }
 
-    func registerTap(at point: CGPoint, imageCount: Int) {
+    func registerTap(at point: CGPoint, imageCount: Int, reduceMotion: Bool) {
         guard !isTransitioning, imageCount > 0 else { return }
 
         let nextEventID = (latestTransitionEvent?.id ?? 0) + 1
         let fromImageIndex = currentImageIndex
         let nextImageIndex = (currentImageIndex + 1) % imageCount
-        let transitionDuration = transitionTuning.duration
+        let transitionDuration = reduceMotion ? 0 : transitionTuning.duration
 
         latestTransitionEvent = RippleTransitionEvent(
             id: nextEventID,

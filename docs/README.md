@@ -10,6 +10,8 @@ Read in this order:
 3. [Project Structure](./project-structure.md)
 4. [Customization Notes](./customization.md)
 5. [Media Rights](./media-rights.md)
+6. [Memi Audit and Rendered Rerun](./memi-design-audit.md)
+7. [Machine-readable Rerun Evidence](./memi-rerun-evidence.json)
 
 ## What You Will Find Here
 
@@ -17,6 +19,7 @@ Read in this order:
 - how the transition is modeled
 - how the files are organized
 - which changes are safest to make
+- how the read-only Memi audit was corrected and rerun
 
 ## Snapshot
 

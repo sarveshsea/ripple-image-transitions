@@ -19,10 +19,12 @@ They are replacement abstract images generated specifically for this fork on
 prompts, timestamps, output identifiers, dimensions, and SHA256 hashes are in
 [`media/provenance.json`](./media/provenance.json).
 
-`docs/media/memi-simulator-proof.jpg` is a simulator screenshot of the fork
-using a replacement asset. It is retained as documentation evidence and includes
-Apple simulator chrome; this repository does not grant rights it does not hold
-in third-party interface elements.
+`docs/media/memi-simulator-proof.jpg`,
+`docs/media/memi-reduced-motion-before.jpg`, and
+`docs/media/memi-reduced-motion-after.jpg` are simulator screenshots of the
+fork using replacement assets. They are retained as documentation evidence and
+include Apple simulator chrome; this repository does not grant rights it does
+not hold in third-party interface elements.
 
 ## License basis and limits
 
@@ -44,4 +46,5 @@ generation event auditable without expanding that claim.
 The application source remains derived from
 [`eujinco/ripple-image-transitions`](https://github.com/eujinco/ripple-image-transitions).
 The original copyright and MIT terms remain intact in
-[`LICENSE`](../LICENSE).
+[`LICENSE`](../LICENSE). The separate [`NOTICE.md`](../NOTICE.md) records the
+fork boundary without implying upstream affiliation or endorsement.

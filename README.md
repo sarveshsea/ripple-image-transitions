@@ -35,15 +35,24 @@ interface quality. See the
 [baseline report](./docs/memi-design-audit.md) for the exact result and the
 manual SwiftUI/Metal findings that remain outside the scanner's coverage.
 
+A newer Memi candidate scans 16 source files and reports partial SwiftUI
+coverage. This fork includes the resulting reduced-motion and accessibility
+correction, a clean before/after rerun, and simulator-backed runtime evidence.
+The candidate clears its two assessed findings but still returns score 0
+because whole-category native and Metal quality remain unassessed. See the
+[machine-readable rerun evidence](./docs/memi-rerun-evidence.json).
+
 The checked-in [`memoire.agent.yaml`](./memoire.agent.yaml) narrows the
 integration to a read-only SwiftUI audit recipe. CI uploads memi's generated
-health artifacts without committing them.
+health artifacts without committing them, does not persist checkout
+credentials, and fails if the audit changes tracked files or creates any
+undeclared repo-local file outside the seven expected report artifacts.
 
 ![Simulator launch proof showing the replacement blue ripple asset and four tuning controls](docs/media/memi-simulator-proof.jpg)
 
-The screenshot was captured after a clean Debug build and launch on the
-`Nate Design QA 26.5` iPhone simulator. It is launch evidence, not a substitute
-for accessibility or interaction testing.
+The original screenshot is launch evidence. The baseline report also includes
+the later reduced-motion before/after pair and runtime accessibility action
+proof from the same named simulator.
 
 ## Repository Boundary
 
@@ -88,3 +97,5 @@ It is intentionally not trying to provide:
 ## License
 
 [MIT License](./LICENSE), preserving copyright and attribution to Eujin Nam.
+See the [fork notice](./NOTICE.md) for the boundary between upstream and
+fork-specific work.

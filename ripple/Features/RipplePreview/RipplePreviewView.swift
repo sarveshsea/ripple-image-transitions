@@ -18,6 +18,7 @@ struct RipplePreviewView: View {
         #endif
     }
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var model = RipplePreviewModel()
 
     var body: some View {
@@ -27,6 +28,8 @@ struct RipplePreviewView: View {
             RippleCanvasView(
                 eventSnapshot: canvasEventSnapshot,
                 tuningSnapshot: canvasTuningSnapshot,
+                reduceMotion: reduceMotion,
+                accessibilityValue: accessibilityImageValue,
                 onTap: handleTap
             )
             .task(id: model.transitionTrigger) {
@@ -58,7 +61,7 @@ struct RipplePreviewView: View {
             transitionTrigger: model.transitionTrigger,
             transitionDuration: model.transitionDurationForCurrentEvent,
             rippleOrigin: model.rippleOrigin,
-            rippleTrigger: model.rippleTrigger
+            rippleTrigger: reduceMotion ? 0 : model.rippleTrigger
         )
     }
 
@@ -77,7 +80,15 @@ struct RipplePreviewView: View {
         #endif
     }
 
+    private var accessibilityImageValue: String {
+        "Image \(model.currentImageIndex + 1) of \(Assets.imageNames.count)"
+    }
+
     private func handleTap(_ point: CGPoint) {
-        model.registerTap(at: point, imageCount: Assets.imageNames.count)
+        model.registerTap(
+            at: point,
+            imageCount: Assets.imageNames.count,
+            reduceMotion: reduceMotion
+        )
     }
 }
