@@ -3,6 +3,7 @@ set -euo pipefail
 
 preview_view="ripple/Features/RipplePreview/RipplePreviewView.swift"
 canvas_view="ripple/Features/RipplePreview/RippleCanvasView.swift"
+effect="ripple/Effects/RippleEffect.swift"
 model="ripple/Features/RipplePreview/RipplePreviewModel.swift"
 
 require_pattern() {
@@ -20,6 +21,21 @@ require_pattern \
   '@Environment\(\\\.accessibilityReduceMotion\)' \
   "$preview_view" \
   'RipplePreviewView must read the system Reduce Motion preference.'
+
+require_pattern \
+  '@Environment\(\\\.accessibilityReduceMotion\)' \
+  "$canvas_view" \
+  'RippleCanvasView must gate its animator from the local Reduce Motion environment.'
+
+require_pattern \
+  '@Environment\(\\\.accessibilityReduceMotion\)' \
+  "$effect" \
+  'RippleEffect must gate its shader animator from the local Reduce Motion environment.'
+
+require_pattern \
+  'if[[:space:]]+accessibilityReduceMotion' \
+  "$effect" \
+  'RippleEffect must bypass its keyframe animator when Reduce Motion is enabled.'
 
 require_pattern \
   'registerTap\(at.*imageCount:.*reduceMotion:' \
