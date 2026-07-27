@@ -67,13 +67,21 @@ do
   }
 done
 
-after_commit="$(node -e '
+read_commit() {
+  local field="$1"
+  node -e '
   const fs = require("node:fs");
   const evidence = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
-  process.stdout.write(evidence.after.forkCommit);
-' "$evidence_path")"
+  process.stdout.write(evidence[process.argv[2]].forkCommit);
+' "$evidence_path" "$field"
+}
 
+before_commit="$(read_commit before)"
+after_commit="$(read_commit after)"
+
+git cat-file -e "${before_commit}^{commit}"
 git cat-file -e "${after_commit}^{commit}"
+git merge-base --is-ancestor "$before_commit" "$after_commit"
 git merge-base --is-ancestor "$after_commit" HEAD
 
 printf 'Memi SwiftUI rerun evidence verified.\n'
