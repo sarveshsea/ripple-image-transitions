@@ -2,6 +2,8 @@ import SwiftUI
 
 /// A modifier that performs a ripple effect whenever its trigger changes.
 struct RippleEffect<T: Equatable>: ViewModifier {
+    @Environment(\.accessibilityReduceMotion) private var accessibilityReduceMotion
+
     var origin: CGPoint
     var trigger: T
     var tuning: RippleDefaults
@@ -16,14 +18,19 @@ struct RippleEffect<T: Equatable>: ViewModifier {
         self.tuning = tuning
     }
 
+    @ViewBuilder
     func body(content: Content) -> some View {
-        let duration = tuning.duration
-        let amplitude = tuning.amplitude
-        let frequency = tuning.frequency
-        let decay = tuning.decay
-        let speed = tuning.speed
+        if accessibilityReduceMotion {
+            content
+        } else {
+            animatedContent(content)
+        }
+    }
 
-        content.keyframeAnimator(
+    private func animatedContent(_ content: Content) -> some View {
+        let snapshot = tuning
+
+        return content.keyframeAnimator(
             initialValue: 0,
             trigger: trigger
         ) { view, elapsedTime in
@@ -31,16 +38,16 @@ struct RippleEffect<T: Equatable>: ViewModifier {
                 RippleModifier(
                     origin: origin,
                     elapsedTime: elapsedTime,
-                    duration: duration,
-                    amplitude: amplitude,
-                    frequency: frequency,
-                    decay: decay,
-                    speed: speed
+                    duration: snapshot.duration,
+                    amplitude: snapshot.amplitude,
+                    frequency: snapshot.frequency,
+                    decay: snapshot.decay,
+                    speed: snapshot.speed
                 )
             )
         } keyframes: { _ in
             MoveKeyframe(0)
-            LinearKeyframe(duration, duration: duration)
+            LinearKeyframe(snapshot.duration, duration: snapshot.duration)
         }
     }
 }

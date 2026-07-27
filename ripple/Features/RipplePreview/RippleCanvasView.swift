@@ -26,6 +26,7 @@ struct RippleCanvasView: View {
     let reduceMotion: Bool
     let accessibilityValue: String
     let onTap: (CGPoint) -> Void
+    @Environment(\.accessibilityReduceMotion) private var accessibilityReduceMotion
     @State private var canvasSize = CGSize.zero
 
     var body: some View {
@@ -64,7 +65,7 @@ struct RippleCanvasView: View {
 
     @ViewBuilder
     private func transitionComposite(in size: CGSize) -> some View {
-        if reduceMotion {
+        if accessibilityReduceMotion || reduceMotion {
             staticComposite(in: size)
         } else {
             animatedComposite(in: size)
