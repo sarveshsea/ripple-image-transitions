@@ -23,7 +23,10 @@ struct RippleCanvasView: View {
 
     let eventSnapshot: RippleCanvasEventSnapshot
     let tuningSnapshot: RippleCanvasTuningSnapshot
+    let reduceMotion: Bool
+    let accessibilityValue: String
     let onTap: (CGPoint) -> Void
+    @State private var canvasSize = CGSize.zero
 
     var body: some View {
         Color.clear
@@ -45,17 +48,46 @@ struct RippleCanvasView: View {
                 )
             )
             .shadow(color: .black.opacity(0.12), radius: 18, y: 10)
+            .onGeometryChange(for: CGSize.self) { proxy in
+                proxy.size
+            } action: { newSize in
+                canvasSize = newSize
+            }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Ripple image preview")
+            .accessibilityValue(accessibilityValue)
+            .accessibilityHint("Double-tap to show the next image.")
+            .accessibilityAction {
+                onTap(accessibilityOrigin)
+            }
     }
 
     @ViewBuilder
     private func transitionComposite(in size: CGSize) -> some View {
+        if reduceMotion {
+            staticComposite(in: size)
+        } else {
+            animatedComposite(in: size)
+        }
+    }
+
+    private func staticComposite(in size: CGSize) -> some View {
+        (eventSnapshot.nextImage ?? eventSnapshot.currentImage)
+            .resizable()
+            .scaledToFill()
+            .frame(width: size.width, height: size.height)
+            .clipped()
+            .position(x: size.width * 0.5, y: size.height * 0.5)
+    }
+
+    private func animatedComposite(in size: CGSize) -> some View {
         let fullCoverageRadius = TransitionRevealModifier.maxRadius(
             for: size,
             origin: eventSnapshot.transitionOrigin,
             feather: tuningSnapshot.transitionFeather
         )
 
-        Color.clear
+        return Color.clear
             .frame(width: size.width, height: size.height)
             .keyframeAnimator(
                 initialValue: 0.0,
@@ -93,9 +125,13 @@ struct RippleCanvasView: View {
                     duration: eventSnapshot.transitionDuration
                 )
             }
-            .position(
-                x: size.width * 0.5,
-                y: size.height * 0.5
-            )
+            .position(x: size.width * 0.5, y: size.height * 0.5)
+    }
+
+    private var accessibilityOrigin: CGPoint {
+        CGPoint(
+            x: canvasSize.width * 0.5,
+            y: canvasSize.height * 0.5
+        )
     }
 }

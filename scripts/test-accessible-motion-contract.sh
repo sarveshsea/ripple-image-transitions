@@ -22,7 +22,7 @@ require_pattern \
   'RipplePreviewView must read the system Reduce Motion preference.'
 
 require_pattern \
-  'registerTap\(at:.*imageCount:.*reduceMotion:' \
+  'registerTap\(at.*imageCount:.*reduceMotion:' \
   "$model" \
   'RipplePreviewModel must accept the Reduce Motion state when registering a transition.'
 
