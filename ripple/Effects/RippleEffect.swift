@@ -32,7 +32,7 @@ struct RippleEffect<T: Equatable>: ViewModifier {
 
         return content.keyframeAnimator(
             initialValue: 0,
-            trigger: trigger
+            trigger: accessibilityReduceMotion ? nil : trigger
         ) { view, elapsedTime in
             view.modifier(
                 RippleModifier(

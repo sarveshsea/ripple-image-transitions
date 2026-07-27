@@ -92,7 +92,9 @@ struct RippleCanvasView: View {
             .frame(width: size.width, height: size.height)
             .keyframeAnimator(
                 initialValue: 0.0,
-                trigger: eventSnapshot.transitionTrigger
+                trigger: accessibilityReduceMotion || reduceMotion
+                    ? 0
+                    : eventSnapshot.transitionTrigger
             ) { _, elapsedTime in
                 ZStack {
                     eventSnapshot.currentImage
