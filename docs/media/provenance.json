@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "recordedAt": "2026-07-26T21:07:23Z",
+  "recordedAt": "2026-07-27T00:31:37Z",
   "upstreamExcludedMedia": [
     {
       "upstreamPath": "docs/media/github-cover.jpg",
@@ -70,6 +70,46 @@
         "simulator": "Nate Design QA 26.5",
         "sourceImages": [
           "ripple/Assets.xcassets/palm_tree.imageset/image.png"
+        ]
+      }
+    },
+    {
+      "path": "docs/media/memi-reduced-motion-before.jpg",
+      "sha256": "fa70661aeb75405dd5b4612dd78fddbc1d55b36fcd2a874160bf51499d366709",
+      "dimensions": {
+        "width": 368,
+        "height": 800
+      },
+      "capturedAt": "2026-07-27T00:30:48Z",
+      "timestampBasis": "XcodeBuildMCP capture time in UTC.",
+      "construction": {
+        "tool": "XcodeBuildMCP screenshot",
+        "source": "Debug simulator launch of com.example.ripple at fork commit 22df4797e8b0d87cb5a64a81c933b7c4d7445890",
+        "simulator": "Nate Design QA 26.5",
+        "systemReduceMotionEnabled": true,
+        "runtimeAccessibilityState": "Ripple image preview, Image 1 of 2",
+        "sourceImages": [
+          "ripple/Assets.xcassets/palm_tree.imageset/image.png"
+        ]
+      }
+    },
+    {
+      "path": "docs/media/memi-reduced-motion-after.jpg",
+      "sha256": "a96bd1ad8e7c5ca0dfd4ed076d1410778ca6f01dc4fa659b8472984ba401ef98",
+      "dimensions": {
+        "width": 368,
+        "height": 800
+      },
+      "capturedAt": "2026-07-27T00:30:48Z",
+      "timestampBasis": "XcodeBuildMCP capture time in UTC.",
+      "construction": {
+        "tool": "XcodeBuildMCP screenshot",
+        "source": "Default accessibility action after Debug simulator launch of com.example.ripple at fork commit 22df4797e8b0d87cb5a64a81c933b7c4d7445890",
+        "simulator": "Nate Design QA 26.5",
+        "systemReduceMotionEnabled": true,
+        "runtimeAccessibilityState": "Ripple image preview, Image 2 of 2",
+        "sourceImages": [
+          "ripple/Assets.xcassets/image_2.imageset/image-2.png"
         ]
       }
     }

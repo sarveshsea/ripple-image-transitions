@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-07-27T00:31:37.905Z",
+  "repository": "sarveshsea/ripple-image-transitions",
+  "upstream": "eujinco/ripple-image-transitions",
+  "memiCandidate": {
+    "repository": "sarveshsea/memi",
+    "commit": "b02e150c623e495ba1cf8400b07587eadb5d39c1",
+    "version": "2.6.2",
+    "distIndexSha256": "ceb04a36b5a6c60ff320b7c433232c65ef546d64cecddc110bd55713459b4354",
+    "command": "DO_NOT_TRACK=1 MEMI_TELEMETRY_DISABLED=1 node <memi-checkout>/dist/index.js diagnose . --json --no-write --fail-on none"
+  },
+  "before": {
+    "forkCommit": "96259084962e8e623cbb12fa0c6825600210c4dc",
+    "generatedAt": "2026-07-27T00:31:34.606Z",
+    "worktreeCleanBeforeAndAfter": true,
+    "schemaVersion": 2,
+    "scannedFiles": 16,
+    "swiftUiFiles": 9,
+    "score": 0,
+    "scoreScope": "none",
+    "verdict": "unassessed — SwiftUI coverage is partial",
+    "gatingIssues": 2,
+    "issues": [
+      {
+        "id": "swiftui.reduced-motion-missing",
+        "severity": "high",
+        "affectedFiles": [
+          "ripple/Effects/RippleEffect.swift",
+          "ripple/Features/RipplePreview/RippleCanvasView.swift"
+        ]
+      },
+      {
+        "id": "swiftui.gesture-accessibility-action-missing",
+        "severity": "medium",
+        "affectedFiles": [
+          "ripple/Features/RipplePreview/RippleCanvasView.swift"
+        ]
+      }
+    ]
+  },
+  "after": {
+    "forkCommit": "22df4797e8b0d87cb5a64a81c933b7c4d7445890",
+    "generatedAt": "2026-07-27T00:31:37.905Z",
+    "worktreeCleanBeforeAndAfter": true,
+    "schemaVersion": 2,
+    "scannedFiles": 16,
+    "swiftUiFiles": 9,
+    "score": 0,
+    "scoreScope": "none",
+    "verdict": "unassessed — SwiftUI coverage is partial",
+    "gatingIssues": 0,
+    "issues": [],
+    "assessedDimensions": [
+      "swiftui.gesture-accessibility-action",
+      "swiftui.reduced-motion"
+    ],
+    "unassessedDimensions": [
+      "accessibility",
+      "color",
+      "components",
+      "maintainability",
+      "metal:color-correctness",
+      "metal:gpu-performance",
+      "metal:shader-semantics",
+      "responsive",
+      "spacing",
+      "swift:source-analysis",
+      "swiftui:rendered-quality",
+      "swiftui:runtime-accessibility",
+      "swiftui:whole-category-analysis",
+      "typography",
+      "visual-system"
+    ],
+    "appliedScoreCaps": [
+      {
+        "id": "partial-source-analysis",
+        "maximum": 0,
+        "reason": "SwiftUI static checks are partial and do not justify a whole-category score."
+      }
+    ]
+  },
+  "simulator": {
+    "host": {
+      "modelName": "MacBook Pro",
+      "modelIdentifier": "Mac15,7",
+      "chip": "Apple M3 Pro",
+      "memory": "36 GB"
+    },
+    "name": "Nate Design QA 26.5",
+    "runtime": "iOS 26.5",
+    "simulatorId": "05C48E48-967B-4F94-B3DA-607D09BED1DB",
+    "bundleId": "com.example.ripple",
+    "systemReduceMotionEnabled": true,
+    "buildRun": {
+      "status": "succeeded",
+      "warnings": 0,
+      "errors": 0
+    },
+    "runtimeAccessibility": {
+      "beforeAction": "Ripple image preview, Image 1 of 2",
+      "action": "default tap action",
+      "afterAction": "Ripple image preview, Image 2 of 2"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "docs/media/memi-reduced-motion-before.jpg",
+      "sha256": "fa70661aeb75405dd5b4612dd78fddbc1d55b36fcd2a874160bf51499d366709",
+      "width": 368,
+      "height": 800,
+      "state": "Image 1 of 2 with system Reduce Motion enabled"
+    },
+    {
+      "path": "docs/media/memi-reduced-motion-after.jpg",
+      "sha256": "a96bd1ad8e7c5ca0dfd4ed076d1410778ca6f01dc4fa659b8472984ba401ef98",
+      "width": 368,
+      "height": 800,
+      "state": "Image 2 of 2 after the default accessibility action"
+    }
+  ],
+  "limitations": [
+    "The public 2.6.2 package remains the historical zero-file baseline; the SwiftUI scanner rerun uses the named Memi candidate commit.",
+    "Zero findings applies only to the two assessed SwiftUI checks and is not a whole-product quality score.",
+    "Metal shader semantics, GPU performance, color correctness, and whole-category rendered quality remain unassessed."
+  ]
+}

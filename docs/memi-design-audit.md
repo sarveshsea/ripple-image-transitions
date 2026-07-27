@@ -1,4 +1,4 @@
-# Read-only memi design-audit baseline
+# Read-only memi design-audit baseline and rendered rerun
 
 - Date: 2026-07-26
 - Repository: `sarveshsea/ripple-image-transitions`
@@ -33,9 +33,8 @@ iPhone simulator:
 - bundle identifier: `com.example.ripple`
 - visual evidence: [`media/memi-simulator-proof.jpg`](./media/memi-simulator-proof.jpg)
 
-The simulator UI hierarchy could not be extracted by the automation tool.
-Accordingly, the screenshot proves launch and rendering only; it does not clear
-the accessibility or interaction findings below.
+That historical screenshot proves launch and rendering only. A later candidate
+rerun adds runtime accessibility and reduced-motion evidence below.
 
 ## Result and coverage
 
@@ -74,6 +73,50 @@ Manual findings are kept separate from the Memi score:
 These findings are observations for evaluation, not changes to the upstream
 sample.
 
+## Candidate correction and rerun
+
+The fork correction is deliberately small:
+
+- each motion owner reads the system `accessibilityReduceMotion` value
+- reduced-motion events have zero duration and do not trigger the ripple shader
+- the canvas exposes a label, value, hint, and default accessibility action
+- the default action advances from the center of the rendered canvas
+
+The same read-only command was rerun from Memi candidate commit
+`b02e150c623e495ba1cf8400b07587eadb5d39c1` against clean detached worktrees:
+
+| Evidence | Before | After |
+| --- | --- | --- |
+| Fork commit | `96259084962e8e623cbb12fa0c6825600210c4dc` | `22df4797e8b0d87cb5a64a81c933b7c4d7445890` |
+| Scanned files | 16 | 16 |
+| SwiftUI files | 9 | 9 |
+| File-anchored findings | 2 | 0 |
+| Gating issues | 2 | 0 |
+| Score | 0, partial coverage cap | 0, partial coverage cap |
+| Worktree writes | none | none |
+
+The zero after-state findings apply only to
+`swiftui.gesture-accessibility-action` and `swiftui.reduced-motion`. Memi
+continues to mark whole-category SwiftUI quality, runtime accessibility, Metal
+shader semantics, GPU performance, and color correctness as unassessed. The
+machine-readable command, commits, hashes, dimensions, and limitations are in
+[`memi-rerun-evidence.json`](./memi-rerun-evidence.json).
+
+## Rendered accessibility evidence
+
+The corrected commit built and launched on the `Nate Design QA 26.5` iOS 26.5
+simulator with zero build warnings and zero errors. With the simulator's system
+Reduce Motion preference enabled:
+
+- the runtime tree exposed `Ripple image preview, Image 1 of 2` as a button
+- its default action advanced to `Ripple image preview, Image 2 of 2`
+- the transition used the static branch while both animator triggers were
+  disabled by the same environment value
+
+| Before action | After action |
+| --- | --- |
+| ![Blue image before the reduced-motion accessibility action](./media/memi-reduced-motion-before.jpg) | ![Warm image after the reduced-motion accessibility action](./media/memi-reduced-motion-after.jpg) |
+
 ## Licensing evidence
 
 The upstream MIT license and Eujin Nam copyright notice are preserved. The
@@ -82,12 +125,13 @@ before publication. Replacement provenance is documented in
 [`media-rights.md`](./media-rights.md) and the machine-readable
 [`media/provenance.json`](./media/provenance.json).
 
-## Next acceptance gate
+## Remaining acceptance boundary
 
-Memi should not claim SwiftUI audit support until it can:
+This proof closes the two assessed static findings and supplies their rendered
+rerun. It does not justify a broad native-quality score. Memi still needs to:
 
-- discover SwiftUI view, control, gesture, and shader source files
-- report assessed and unassessed dimensions explicitly
-- cite file and line evidence
-- incorporate rendered simulator and reduced-motion evidence
-- avoid producing a high aggregate score when scanner coverage is zero
+- expand beyond the current partial SwiftUI checks
+- assess Metal shader semantics and color correctness
+- measure GPU frame time and hitches on named hardware
+- ingest durable runtime evidence rather than relying on external evidence
+  records
