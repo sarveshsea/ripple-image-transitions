@@ -24,6 +24,10 @@ jobs:
         shell: bash
         run: bash scripts/test-media-provenance.sh
 
+      - name: Verify accessible motion contract
+        shell: bash
+        run: bash scripts/test-accessible-motion-contract.sh
+
       - name: Run pinned memi design audit
         uses: sarveshsea/memi@ee3f3f00731a7a08c7616d4dfb14440165a86354 # first-run audits are non-invasive
         with:
