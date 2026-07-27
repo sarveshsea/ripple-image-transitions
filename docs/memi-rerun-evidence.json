@@ -11,7 +11,7 @@
     "command": "DO_NOT_TRACK=1 MEMI_TELEMETRY_DISABLED=1 node <memi-checkout>/dist/index.js diagnose . --json --no-write --fail-on none"
   },
   "before": {
-    "forkCommit": "96259084962e8e623cbb12fa0c6825600210c4dc",
+    "forkCommit": "962590872163f6b3fa8f3e4d6a41987f22595bc2",
     "generatedAt": "2026-07-27T00:31:34.606Z",
     "worktreeCleanBeforeAndAfter": true,
     "schemaVersion": 2,

@@ -87,7 +87,7 @@ The same read-only command was rerun from Memi candidate commit
 
 | Evidence | Before | After |
 | --- | --- | --- |
-| Fork commit | `96259084962e8e623cbb12fa0c6825600210c4dc` | `22df4797e8b0d87cb5a64a81c933b7c4d7445890` |
+| Fork commit | `962590872163f6b3fa8f3e4d6a41987f22595bc2` | `22df4797e8b0d87cb5a64a81c933b7c4d7445890` |
 | Scanned files | 16 | 16 |
 | SwiftUI files | 9 | 9 |
 | File-anchored findings | 2 | 0 |
