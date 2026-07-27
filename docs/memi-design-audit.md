@@ -17,7 +17,9 @@ DO_NOT_TRACK=1 MEMI_TELEMETRY_DISABLED=1 \
 ```
 
 CI uses the same exact CLI version through a full-commit action pin. Generated
-CI reports exist only in the runner workspace and uploaded artifact.
+CI reports exist only in the runner workspace and uploaded artifact. A
+post-audit gate runs even after an audit failure, rejects tracked mutations,
+and permits only the seven declared files under `.memoire/app-quality/`.
 
 ## Simulator evidence
 
@@ -85,6 +87,11 @@ The fork correction is deliberately small:
 The same read-only command was rerun from Memi candidate commit
 `b02e150c623e495ba1cf8400b07587eadb5d39c1` against clean detached worktrees:
 
+The candidate executable was independently rebuilt from that exact commit with
+`npm ci --ignore-scripts --no-audit --no-fund` and `npm run build`. Its
+`dist/index.js` SHA256 matched the recorded rerun digest
+`ceb04a36b5a6c60ff320b7c433232c65ef546d64cecddc110bd55713459b4354`.
+
 | Evidence | Before | After |
 | --- | --- | --- |
 | Fork commit | `962590872163f6b3fa8f3e4d6a41987f22595bc2` | `22df4797e8b0d87cb5a64a81c933b7c4d7445890` |
@@ -116,6 +123,14 @@ Reduce Motion preference enabled:
 | Before action | After action |
 | --- | --- |
 | ![Blue image before the reduced-motion accessibility action](./media/memi-reduced-motion-before.jpg) | ![Warm image after the reduced-motion accessibility action](./media/memi-reduced-motion-after.jpg) |
+
+The recorded build inputs are pinned to the `ripple` source-tree object and
+Xcode project-file blob in the machine-readable evidence. CI rejects the
+evidence if either current build input drifts. A fresh current-branch run on
+2026-07-27 rebuilt and launched the same inputs with zero warnings or errors
+and repeated the accessible `Image 1 of 2` to `Image 2 of 2` action. Reduce
+Motion was off during that fresh confirmation, so it supplements rather than
+replaces the earlier reduced-motion proof.
 
 ## Licensing evidence
 

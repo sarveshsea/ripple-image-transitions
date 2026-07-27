@@ -44,7 +44,9 @@ because whole-category native and Metal quality remain unassessed. See the
 
 The checked-in [`memoire.agent.yaml`](./memoire.agent.yaml) narrows the
 integration to a read-only SwiftUI audit recipe. CI uploads memi's generated
-health artifacts without committing them.
+health artifacts without committing them, does not persist checkout
+credentials, and fails if the audit changes tracked files or creates any
+undeclared repo-local file outside the seven expected report artifacts.
 
 ![Simulator launch proof showing the replacement blue ripple asset and four tuning controls](docs/media/memi-simulator-proof.jpg)
 
@@ -95,3 +97,5 @@ It is intentionally not trying to provide:
 ## License
 
 [MIT License](./LICENSE), preserving copyright and attribution to Eujin Nam.
+See the [fork notice](./NOTICE.md) for the boundary between upstream and
+fork-specific work.

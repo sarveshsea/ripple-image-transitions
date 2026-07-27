@@ -16,6 +16,11 @@ const assert = (condition, message) => {
 };
 
 assert(evidence.schemaVersion === 1, "Unexpected rerun evidence schema.");
+assert(
+  evidence.memiCandidate.reproduction.matchesRecordedDigest === true
+    && evidence.memiCandidate.reproduction.distIndexSha256 === evidence.memiCandidate.distIndexSha256,
+  "The Memi candidate build reproduction must match the recorded executable digest.",
+);
 assert(evidence.before.worktreeCleanBeforeAndAfter === true, "Before worktree must be clean.");
 assert(evidence.after.worktreeCleanBeforeAndAfter === true, "After worktree must be clean.");
 assert(evidence.before.scannedFiles === evidence.after.scannedFiles, "Scan scope changed across the rerun.");
@@ -37,6 +42,39 @@ assert(
   evidence.simulator.runtimeAccessibility.beforeAction.endsWith("Image 1 of 2")
     && evidence.simulator.runtimeAccessibility.afterAction.endsWith("Image 2 of 2"),
   "Runtime accessibility state transition is incomplete.",
+);
+assert(
+  /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(
+    evidence.simulator.latestVerification.verifiedAt,
+  ),
+  "Fresh simulator verification must retain a UTC timestamp.",
+);
+assert(
+  /^[0-9a-f]{40}$/.test(evidence.simulator.latestVerification.forkCommit),
+  "Fresh simulator verification must bind to an exact fork commit.",
+);
+assert(
+  evidence.simulator.latestVerification.systemReduceMotionEnabled === false,
+  "Fresh verification scope must not imply the reduced-motion setting was enabled.",
+);
+assert(
+  evidence.simulator.latestVerification.buildRun.status === "succeeded"
+    && evidence.simulator.latestVerification.buildRun.warnings === 0
+    && evidence.simulator.latestVerification.buildRun.errors === 0,
+  "Fresh simulator build result is incomplete.",
+);
+assert(
+  evidence.simulator.latestVerification.runtimeAccessibility.beforeAction.endsWith("Image 1 of 2")
+    && evidence.simulator.latestVerification.runtimeAccessibility.afterAction.endsWith("Image 2 of 2"),
+  "Fresh runtime accessibility state transition is incomplete.",
+);
+assert(
+  /^[0-9a-f]{40}$/.test(evidence.simulator.buildInputs.rippleTree),
+  "Simulator evidence must bind to the audited ripple source tree.",
+);
+assert(
+  /^[0-9a-f]{40}$/.test(evidence.simulator.buildInputs.projectFileBlob),
+  "Simulator evidence must bind to the audited Xcode project file.",
 );
 NODE
 
@@ -78,10 +116,39 @@ read_commit() {
 
 before_commit="$(read_commit before)"
 after_commit="$(read_commit after)"
+latest_verification_commit="$(
+  node -e '
+    const fs = require("node:fs");
+    const evidence = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+    process.stdout.write(evidence.simulator.latestVerification.forkCommit);
+  ' "$evidence_path"
+)"
 
 git cat-file -e "${before_commit}^{commit}"
 git cat-file -e "${after_commit}^{commit}"
+git cat-file -e "${latest_verification_commit}^{commit}"
 git merge-base --is-ancestor "$before_commit" "$after_commit"
 git merge-base --is-ancestor "$after_commit" HEAD
+git merge-base --is-ancestor "$latest_verification_commit" HEAD
+
+expected_ripple_tree="$(
+  node -e '
+    const fs = require("node:fs");
+    const evidence = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+    process.stdout.write(evidence.simulator.buildInputs.rippleTree);
+  ' "$evidence_path"
+)"
+expected_project_blob="$(
+  node -e '
+    const fs = require("node:fs");
+    const evidence = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+    process.stdout.write(evidence.simulator.buildInputs.projectFileBlob);
+  ' "$evidence_path"
+)"
+
+test "$(git rev-parse HEAD:ripple)" = "$expected_ripple_tree"
+test "$(git rev-parse HEAD:ripple.xcodeproj/project.pbxproj)" = "$expected_project_blob"
+test "$(git rev-parse "$latest_verification_commit:ripple")" = "$expected_ripple_tree"
+test "$(git rev-parse "$latest_verification_commit:ripple.xcodeproj/project.pbxproj")" = "$expected_project_blob"
 
 printf 'Memi SwiftUI rerun evidence verified.\n'

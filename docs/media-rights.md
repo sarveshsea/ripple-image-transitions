@@ -46,4 +46,5 @@ generation event auditable without expanding that claim.
 The application source remains derived from
 [`eujinco/ripple-image-transitions`](https://github.com/eujinco/ripple-image-transitions).
 The original copyright and MIT terms remain intact in
-[`LICENSE`](../LICENSE).
+[`LICENSE`](../LICENSE). The separate [`NOTICE.md`](../NOTICE.md) records the
+fork boundary without implying upstream affiliation or endorsement.

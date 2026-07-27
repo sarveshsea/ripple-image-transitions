@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # releases/v4, 2026-07-16
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Verify workflow history and read-only contract
         shell: bash
@@ -23,6 +24,10 @@ jobs:
       - name: Test and verify media provenance policy
         shell: bash
         run: bash scripts/test-media-provenance.sh
+
+      - name: Verify MIT attribution and fork boundary
+        shell: bash
+        run: bash scripts/test-license-attribution.sh
 
       - name: Verify accessible motion contract
         shell: bash
@@ -39,3 +44,8 @@ jobs:
           fail-on: none
           report: "true"
           upload-sarif: "false"
+
+      - name: Prove no undeclared repo-local changes
+        if: ${{ always() }}
+        shell: bash
+        run: bash scripts/verify-read-only-worktree.sh

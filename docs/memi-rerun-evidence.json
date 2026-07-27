@@ -8,7 +8,15 @@
     "commit": "b02e150c623e495ba1cf8400b07587eadb5d39c1",
     "version": "2.6.2",
     "distIndexSha256": "ceb04a36b5a6c60ff320b7c433232c65ef546d64cecddc110bd55713459b4354",
-    "command": "DO_NOT_TRACK=1 MEMI_TELEMETRY_DISABLED=1 node <memi-checkout>/dist/index.js diagnose . --json --no-write --fail-on none"
+    "command": "DO_NOT_TRACK=1 MEMI_TELEMETRY_DISABLED=1 node <memi-checkout>/dist/index.js diagnose . --json --no-write --fail-on none",
+    "reproduction": {
+      "verifiedAt": "2026-07-27T03:03:01Z",
+      "source": "git archive b02e150c623e495ba1cf8400b07587eadb5d39c1",
+      "installCommand": "npm ci --ignore-scripts --no-audit --no-fund",
+      "buildCommand": "npm run build",
+      "distIndexSha256": "ceb04a36b5a6c60ff320b7c433232c65ef546d64cecddc110bd55713459b4354",
+      "matchesRecordedDigest": true
+    }
   },
   "before": {
     "forkCommit": "962590872163f6b3fa8f3e4d6a41987f22595bc2",
@@ -81,6 +89,10 @@
     ]
   },
   "simulator": {
+    "buildInputs": {
+      "rippleTree": "6dfe8b25c0999b2290f30f38258b64a542e99a08",
+      "projectFileBlob": "fee4f436b83277c2d134798e0c7c2388411f9403"
+    },
     "host": {
       "modelName": "MacBook Pro",
       "modelIdentifier": "Mac15,7",
@@ -101,6 +113,22 @@
       "beforeAction": "Ripple image preview, Image 1 of 2",
       "action": "default tap action",
       "afterAction": "Ripple image preview, Image 2 of 2"
+    },
+    "latestVerification": {
+      "verifiedAt": "2026-07-27T02:56:11Z",
+      "forkCommit": "9f6315dee64dc8e6d9f05e327d690d999c41b465",
+      "systemReduceMotionEnabled": false,
+      "buildRun": {
+        "status": "succeeded",
+        "warnings": 0,
+        "errors": 0
+      },
+      "runtimeAccessibility": {
+        "beforeAction": "Ripple image preview, Image 1 of 2",
+        "action": "XcodeBuildMCP tap",
+        "afterAction": "Ripple image preview, Image 2 of 2"
+      },
+      "scope": "Fresh current-branch build, launch, and accessibility-action verification. The durable reduced-motion branch proof remains the earlier system-setting-enabled run bound to the same build input hashes."
     }
   },
   "artifacts": [
